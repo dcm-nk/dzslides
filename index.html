@@ -37,8 +37,8 @@
   <h3>Content Scripts are the key</h3>
   <ul>
     <li>content scripts are attached to an html document and are able to interact with the Document's DOM via a proxy</li>
-    <li>proxy is a key security feature to protect the add-on ( &mp; the browser ) from the web page</li>
-    <li>otherwise, the content script runs in the same security environment as the page itself, with the same set of limitations</li>
+    <li>proxy is a key security feature to protect the add-on ( &amp; the browser ) from the web page</li>
+    <li>otherwise, the content script runs with the same security level as the page itself, with the same set of limitations</li>
   </ul>
 </section>
 
@@ -55,7 +55,7 @@
   <li>control over which page your script is attached to: a specific page, glob or url pattern</li>
   <li>control over *when* the script is attached: start, ready, end ( default )</li>
   <li>caveat: page-mod injects into *any* matching documents, including frames</li>
-  <li>simplest possible example: Open in C9</li>
+  <li>simplest possible example: <a target="_blank" href="https://github.com/c9/open-in-c9-extension">Open in C9</a></li>
   <li>targeted, improves usability(?)</li>
 </ul>
 </section>
