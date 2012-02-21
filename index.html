@@ -1,88 +1,28 @@
 <!DOCTYPE html>
 
 <meta charset="utf-8">
-<title>Hack the Web</title>
+<title>Jetpack Project - Add-ons Meet-up Feb. 21, 2012</title>
 
 <!-- Your Slides -->
 <!-- One section is one slide -->
 
 <section>
-    <!-- This is the first slide -->
-    <h1>Hack the web!</h1>
-    <p>Jeff Griffiths &amp; Matteo Ferretti 
-    <br/>FOSDEM, February 4th, 2012</p>
+  <h1>Jetpack SDK &amp; Builder</h1>
+  <h3>Add-ons of the future!</h3>
+  <h3>SFO Add-ons Meet-up Feb. 21, 2012</h3>
 </section>
 
 <section>
-    <h1>Part 1: it's not hacking, it's 'Personalization'</h1>
-
-    <p>...although hacking sounds cooler.</p>
-</section>
-<section>
-    <h3>Personalizing web sites has a long and glorious history!</h3>
-    <ul>
-      <li>Bookmarklets</li>
-      <li>Greasemonkey</li>
-      <li>userscripts.org</li>
-      <li>native support for userscripts in Chrome</li>
-      <li>content script capabilities are a top-level feature in the Opera, Safari and Chrome extension apis</li>
-    </ul>
+  <h3>This talk is a website</h3>
+  <h3><a href="http://talks.canuckistani.ca/"></a></h3>
 </section>
 
 <section>
-  <h1>Simple, powerful hacking, er <em>'personalization'</em> is a key feature of the Add-on SDK</h1>
-</section>
-
-
-<section>
-  <h3>Content Scripts are the key</h3>
-  <ul>
-    <li>content scripts are attached to an html document and are able to interact with the Document's DOM via a proxy</li>
-    <li>proxy is a key security feature to protect the add-on ( &amp; the browser ) from the web page</li>
-    <li>otherwise, the content script runs with the same security level as the page itself, with the same set of limitations</li>
-  </ul>
-</section>
-
-<section>
-  <h3>Two key modules: <code>tabs</code> and <code>page-mod.</code> </h3>
-  <h3>Distinctly different uses cases.</h3>
-</section>
-
-<section>
-
-<h3>Page-Mod</h3>
-
-<ul>
-  <li>control over which page your script is attached to: a specific page, glob or url pattern</li>
-  <li>control over *when* the script is attached: start, ready, end ( default )</li>
-  <li>caveat: page-mod injects into *any* matching documents, including frames</li>
-  <li>simplest possible example: <a target="_blank" href="https://github.com/c9/open-in-c9-extension">Open in C9</a></li>
-  <li>targeted, improves usability(?)</li>
-</ul>
-</section>
-
-<section>
-  <h3>Tabs</h3>
-  <ul>
-    <li>can enumerate, iterate over all open tabs, open tabs, close them</li>
-    <li>get a handle on the current active tab!</li>
-    <li>react to tab events: open, ready, activ</li>ate, deactivate</li>
-    <li>attach content scripts</li>
-    <li>caveat is,  *only* top</li> level documents are injected, no frames, etc</li>
-    <li>more complex example: twitter search form selection</li>
-  </ul>
-</section>
-
-<section>
-  <h1>LIVE DEMO</h1>
-  <p>( this will probably fail... )</p>
-</section>
-
-<section>
-  <h3>But wait, there's more!</h3>
+  <h3>High-level</h3>
 
   <ul>
-    <li>Integrate with the Firefox UI: panels, widgets, preferences, context-menu</li>
+    <li>Inject logic into web content</li>
+    <li>Securely integrate with the Firefox UI: panels, widgets, preferences, context-menu</li>
     <li>Make crossdomain requests, notifications, access to the clipboard</li>
     <li>access to the entire Mozilla Platform through XPCOM &amp; jsm.</li>
   </ul> 
@@ -111,6 +51,18 @@
 </section>
 
 <section>
+  <h1>Add-on Builder</h1>
+</section>
+
+<section>
+  <h3>Add-on development gets even easier.</h3>
+  <ul>
+    <li>All you need is an AMO account</li>
+    <li></li>
+  </ul>
+</section>
+
+<section>
   <h1>Questions?</h1>
 </section>
 
@@ -128,9 +80,7 @@
 
 <section>
   <h1>Thanks!</h1>
-  <p>we're on the twitters:launch</p>
-  <p>@canuckistani</p>
-  <p>@ZER0</p>
+  <p>we're on the twitters:</p>
   <p>@mozillajetpack</p>
 </section>
 
