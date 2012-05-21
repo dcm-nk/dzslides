@@ -15,6 +15,8 @@
 <div id="nextslideidx">?</div>
 
 <div id="notes">
+
+  <button id="notes-button" onclick="Dz.toggleNotes()">Hide Notes</button>
   <p id="content"></p>
 </div>
 
@@ -60,12 +62,16 @@
     border-top: 8px solid #555;
     bottom: 0;
     color: #444;
-    font-size: 30px;
+    font-size: 24px;
     height: 226px;
     left: 0;
     padding: 0 240px 0 20px;
     position: absolute;
     right: 0;
+  }
+
+  #notes h3 {
+    font-size: 24px;
   }
 
   #time {
@@ -91,7 +97,7 @@
   }
 
   #slideidx,
-  #nextslideidx, 
+  #nextslideidx,
   #slidecount {
     background: #888;
     font-size: 40px;
@@ -133,6 +139,26 @@
     right: 20px;
   }
 
+  #notes-button {
+    border-bottom-left-radius: 10px;
+    border-bottom-right-radius: 10px;
+    border-top: 4px solid #555;
+    background: #888;
+    border: none;
+    color: #FFF;
+    cursor: pointer;
+    font-size: 14px;
+    font-weight: bold;
+    position: absolute;
+    left: 20px;
+    padding-bottom: 1px;
+    width: 120px;
+  }
+
+  .hidden {
+    display : none;
+  }
+
   #popup-button {
     bottom: 88px;
     background: #888;
@@ -157,12 +183,12 @@
     url: null,
     idx: 1
   };
-  
+
   Dz.init = function() {
     this.startClock();
     this.loadIframes();
   }
-  
+
   Dz.onkeydown = function(aEvent) {
     // Don't intercept keyboard shortcuts
     if (aEvent.altKey
@@ -198,7 +224,7 @@
       this.toggleContent();
     }
   }
-  
+
   Dz.onmessage = function(aEvent) {
     var argv = aEvent.data.split(" "), argc = argv.length;
     argv.forEach(function(e, i, a) { a[i] = decodeURIComponent(e) });
@@ -223,9 +249,9 @@
         $("#slidecount").innerHTML = argv[2];
     }
   }
-  
+
   /* Get url from hash or prompt and store it */
-  
+
   Dz.getUrl = function() {
     var u = window.location.hash.split("#")[1];
     if (!u) {
@@ -241,7 +267,7 @@
     }
     return u;
   }
-  
+
   Dz.loadIframes = function() {
     var present = $("#present iframe");
     var future = $("#future iframe");
@@ -261,11 +287,11 @@
     if (this.views.remote)
       this.postMsg(this.views.remote, "TOGGLE_CONTENT");
   }
-  
+
   Dz.onhashchange = function() {
     this.loadIframe();
   }
-  
+
   Dz.back = function() {
     this.postMsg(this.views.present, "BACK");
   }
@@ -287,16 +313,29 @@
   }
 
   Dz.popup = function() {
-    this.views.remote = window.open(this.url + "#" + this.idx, 'slides', 'width=800,height=600,personalbar=0,toolbar=0,scrollbars=1,resizable=1');
+    if (this.views.remote)
+      this.views.remote.focus()
+    else
+      this.views.remote = window.open(this.url + "#" + this.idx, 'slides', 'width=800,height=600,personalbar=0,toolbar=1,scrollbars=1,resizable=1');
   }
-  
+
+  Dz.toggleNotes = function() {
+    var classes = $("#content").classList;
+    var button= $("#notes-button");
+    var label = classes.contains("hidden") ? "Hide Notes" : "Show Notes";
+
+    button.textContent = label;
+
+    classes.toggle("hidden");
+  }
+
   Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
     aMsg = [aMsg];
     for (var i = 2; i < arguments.length; i++)
       aMsg.push(encodeURIComponent(arguments[i]));
     aWin.postMessage(aMsg.join(" "), "*");
   }
-  
+
   Dz.startClock = function() {
     var addZero = function(num) {
       return num < 10 ? '0' + num : num;
@@ -325,7 +364,7 @@
     Function.prototype.bind = function (oThis) {
 
       // closest thing possible to the ECMAScript 5 internal IsCallable
-      // function 
+      // function
       if (typeof this !== "function")
       throw new TypeError(
         "Function.prototype.bind - what is trying to be fBound is not callable"
