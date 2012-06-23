@@ -1,0 +1,268 @@
+/*
+  Add-on SDK / Jetpack HTML5 slides template
+
+  Author: Matteo Ferretti (@ZER0)
+*/
+
+@font-face {
+  font-family: 'BebasNeueRegular';
+  src: url('./assets/BebasNeue-webfont.woff') format('woff');
+  font-weight: normal;
+  font-style: normal;
+}
+
+@font-face {
+  font-family: 'MeriendaOneRegular';
+  src: url('./assets/MeriendaOne-Regular.ttf') format('truetype');
+  font-weight: normal;
+  font-style: normal;
+}
+
+#logo {
+  width: 345px;
+  height: 329px;
+  background: url(../assets/jetpack.png) no-repeat;
+  background-size: 345px 329px;
+  left: 50%;
+  margin-left: -20%;
+  position: absolute;
+  margin-top: 100px;
+  /*bottom: 41px;*/
+  /*clip: rect(0 345px 251px 0);*/
+  z-index: -100;
+}
+
+/*
+  On OS X seems that gradients are not displayed properly on Fullscreen
+  using the Fullscreen API. To avoid that use the Fullscreen provided by
+  the OS instead.
+
+  See: https://bugzilla.mozilla.org/show_bug.cgi?id=756967
+*/
+html {
+  height: 100%;
+  width: 100%;
+  background: -webkit-radial-gradient(center, ellipse cover,   #353a40 0%, #0c0d0e 100%);
+  background: -moz-radial-gradient(center, ellipse cover,  #353a40 0%, #0c0d0e 100%);
+}
+
+html, .view body {
+  counter-reset: slideidx;
+}
+
+body, .view section {
+  color: white;
+  text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+  border-radius: 12px
+}
+
+/* A section is a slide. It's size is 800x600, and this will never change */
+section, .view head > title {
+  font-family: 'BebasNeueRegular', arial, serif;
+  font-size: 30px;
+}
+
+.view section:after {
+  counter-increment: slideidx;
+  content: counter(slideidx, decimal-leading-zero);
+  position: absolute; bottom: -80px; right: 100px;
+  color: white;
+}
+
+.view head > title {
+  color: white;
+  text-align: center;
+  margin: 1em 0 1em 0;
+}
+
+h1 em {
+  text-shadow: 0 1px 0pt #ab0025,
+    0 2px 0 #82001d,
+    0 3px 1px #540012,
+    0 10px 8px rgba(0, 0, 0, 0.3);
+}
+
+h1, h2 {
+  text-align: center;
+  font-size: 80px;
+  font-weight: normal;
+  text-shadow: 0 1px 0pt rgb(204, 204, 204),
+    0 2px 0 rgb(128, 128, 128),
+    0 3px 1px rgb(164, 164, 164),
+    0 10px 8px rgba(0, 0, 0, 0.3);
+}
+
+a, em, h4, li:before {
+  color: #ff0038;
+  font-style: normal;
+}
+
+a {
+  text-decoration: none;
+  border-bottom: 2px dashed #ff0038 ;
+}
+
+h1 em, h2 em {
+  font-style: normal;
+}
+
+h4 {
+  text-align: center;
+  display: block;
+  font-family: MeriendaOneRegular;
+  font-size: 33px;
+  font-weight: normal;
+  font-style: italic;
+  text-shadow: 0 3px rgba(0, 0, 0, 0.3);
+}
+
+h3 {
+  margin: 100px 0 50px 100px;
+  font-weight: normal;
+}
+
+ul.incremental {
+  margin: 50px 100px 50px 170px;
+  list-style: none;
+}
+
+ul {
+  margin: 50px 100px 50px 170px;
+}
+
+ul.double {
+  width: 50%;
+  line-height: 1.5em;
+  float: left;
+  display: inline;
+}
+
+.incremental li:before {
+  content: "\2714";
+  opacity: 1;
+  margin-left: -35px;
+  margin-right: 10px;
+}
+
+li {
+  padding-bottom: 0.5em;
+}
+/* The current item */
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ li:before { opacity: 0; }
+
+p {
+  margin: 75px;
+  font-size: 50px;
+}
+
+blockquote {
+  height: 100%;
+  background-color: black;
+  color: white;
+  font-size: 60px;
+  padding: 50px;
+}
+blockquote:before {
+  content: open-quote;
+}
+blockquote:after {
+  content: close-quote;
+}
+
+/* Figures are displayed full-page, with the caption
+   on top of the image/video */
+figure {
+  background-color: black;
+}
+figcaption {
+  margin: 70px;
+  font-size: 50px;
+}
+
+footer {
+  position: absolute;
+  bottom: 0;
+  width: 100%;
+  padding: 23px;
+  text-align: right;
+  box-shadow: 0px -15px 15px -15px black;
+  font-size: 28px;
+  z-index: 9;
+}
+
+/* Transition effect */
+/* Feel free to change the transition effect for original
+   animations. See here:
+   https://developer.mozilla.org/en/CSS/CSS_transitions
+   How to use CSS3 Transitions: */
+section {
+  -moz-transition: left 400ms linear 0s;
+  -webkit-transition: left 400ms linear 0s;
+  -ms-transition: left 400ms linear 0s;
+  transition: left 400ms linear 0s;
+}
+
+.view section {
+  -moz-transition: none;
+  -webkit-transition: none;
+  -ms-transition: none;
+  transition: none;
+}
+
+.view section[aria-selected] {
+  border: 5px red solid;
+}
+
+/* Before */
+section { left: -150%; }
+/* Now */
+section[aria-selected] { left: 0; }
+/* After */
+section[aria-selected] ~ section { left: +150%; }
+
+/* Incremental elements */
+
+/* By default, visible */
+.incremental > * { opacity: 0.3; }
+
+/* The current item */
+.incremental > *[aria-selected] { opacity: 1; }
+
+/* The items to-be-selected */
+.incremental > *[aria-selected] ~ * { opacity: 0; }
+
+/* The progressbar, at the bottom of the slides, show the global
+   progress of the presentation. */
+#progress-bar {
+  height: 2px;
+  background: #AAA;
+}
+
+pre.prettyprint {
+  overflow: auto;
+  padding: 10px;
+  font-size: 80%;
+  overflow: auto;
+}
+
+section div.img-wrapper {
+    text-align: center;
+}
+
+section img {
+    width: 500px;
+}
+
+h2.left-head {
+  margin-top:110px; 
+  margin-left: 70px;
+  text-align:left !important;
+}
+
+h2.topline {
+  margin-top: 80px;
+}
+
+

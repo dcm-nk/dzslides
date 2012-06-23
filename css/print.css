@@ -1,0 +1,28 @@
+  html, body {margin:0;padding:0;}
+  body {
+    position: static;
+    margin: 0; padding: 0;
+    display: block;
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+  }
+  section {
+    left: 0!important;
+    top: 0!important;
+    position: static!important;
+    visibility: visible!important;
+    page-break-after: always!important;
+    display: block;
+  }
+
+  #progress-bar {
+    display: none;
+  }
+
+  .incremental > *,
+  .incremental > *[aria-selected] ~ *,
+  .incremental > *[aria-selected] ~ li:before {
+    opacity: 1!important;
+    visibility: visible;
+  }
