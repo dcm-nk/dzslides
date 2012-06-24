@@ -34,10 +34,6 @@
     <li>Product Manager for the Firefox Add-on SDK</li>
     <li>GIGANTIC fan of Portland, OR.</li>
   </ul>
-
-  <details>
-    blah
-  </details>
 </section>
 
 <section>
@@ -52,7 +48,12 @@
 
 <section>
   <h2 class="topline">Sorry for <em>browser hacking...</em></h2>
-  <div class="img-wrapper"><img src="media/lmfao.jpg"></div> 
+  <div class="img-wrapper"><img src="media/difference.jpg"></div>
+
+  <details>
+    <p>???</p>
+  </details>
+
 </section>
 
 <section>
@@ -102,33 +103,295 @@
 
 <section>
   <h2>Achievment <em>UNLOCKED</em></h2>
-
   <div class="img-wrapper"><img src="media/SANDCASTLES.png"></div>
+  <details>
+    <p>Today, most people browsing the internet do so using a high-quality, standards-compliant web browser based on either Webkit or Gecko. This is awesome! And an amazing achievment considering where we were 10 years ago. The web is the most ubiquitous software platform ever, and represents a level of freedom of communication, self-expression and creativity that is unprecedented.</p>
+  </details>
+</section>
 
-  <details></details>
+<section>
+  <h2 class="topline">The Web <em>&hearts;</em> FOSS</h2>
+  <div class="img-wrapper"><img src="media/Mobius_20Strip_gr_1_.jpg"></div>
+
+<details>
+  <p>The relationship between FOSS and the web is symbiotic - the Web wouldn't really exist without opens source software, and open source software would be much harder to produde without the web.</p>
+
+  <p></p>
+</details>
 
 </section>
 
 <section>
-  <h2><em>It's not bad hacking</em></h2>
-  <div class="img-wrapper"><img src="media/Hacker.jpg"/></div>
+    <hgroup>
+      <h2>
+        It's not hacking,<br/>
+        it's 'Personalization'
+      </h2>
+      <h4>
+        ...although hacking sounds cooler.
+      </h4>
+    </hgroup>
+
+    <details>
+      <p>
+        To be fair, it's not exactly "hacking", it's more about "personalization".
+      </p>
+    </details>
 </section>
 
 <section>
-  <h3></h3>
+  <div style="margin-top: 20px" class="img-wrapper"><img src="media/internet-money.jpg"></div>
+  <h3 style="margin-top: 20px">It's ah-boot putting users back in control of their web experience!</h3>
+</section>
+
+<section>
+
+    <hgroup>
+      <h2>
+        At Mozilla, putting the user first is really important.
+      </h2>
+      <h4>
+        ...this is why we created the Add-on SDK
+      </h4>
+    </hgroup>
+  
+<details>
+  <p></p>
+</details>
+
+</section>
+
+<section>
+  <hgroup style="margin-top: 160px">
+    <h4>Simple, powerful</h4>
+   <h2>'personalization'<br/>is a key feature</h2>
+   <h4>of the Add-on SDK</h2>
+  </hgroup>
+
+  <details>
+    <p>
+      Personalizing web sites has a long and glorious history: Bookmarklets,
+      Greasemonkey... Personalize the web experience was important, and it is
+      important, that's why Add-on SDK was designed from the start with that in mind.
+    </p>
+    <p>
+      By the way, is there anyone that already used Add-on SDK?
+    </p>
+  </details>
+</section>
+
+<section>
+  <h3>A <em>new way</em> to develop Add-ons</h3>
 
   <ul class="incremental">
-    <li></li>
+    <li>Command-line tool for testing, running, packaging
+    <li>Test framework
+    <li>Modular development via CommonJS
+    <li>A growing collection of community-contributed modules
   </ul>
 
   <details>
+    <p>
+      For the ones that doesn't know, the Add-on SDK is the new way to create
+      add-ons for Firefox. It has command line tool for testing, running and packaging;
+      a test framework; a modular development via CommonJS, and growing collection
+      of community-contributed modules.
+    </p>
+    <p>
+      And...
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h4>you can</h4>
+    <h2>Reuse your skills</h2>
+    <h4>No need to learn new things!</h4>
+  </hgroup>
+
+  <details>
+    <p>You can reuse HTML5, CSS and JavaScript to build your add-on.</p>
+    <p>So, how we can use the Add-on SDK to personalize the web?</p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Page-Mod</h2>
+    <h4>...or 'Styling the web'</h4>
+  </hgroup>
+
+  <details>
+    <p>Page-Mod. This module is designed to easily modify a web page.</p>
+    <p>
+      Page-Mods are applied to all pages that match a url pattern: you can match a
+      specific URL, domain, protocol, and even use a Regular Expression.
+    </p>
+    <p style="display:none">
+      If a document matches the pattern, your add-on will be applied. It doesn't
+      matter if the page is loaded in a tab, popup, or a frame.
+    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h2>Content Style</h2>
+    <h4>and</h4>
+    <h2>Content Script</h2>
+  </hgroup>
+
+  <details>
+    <p>
+      Page-mods can modify the appearance of pages using content style, and behavior
+      using content script.
+    </p>
+    <p>
+      Content Style are quite simple: you can apply stylesheets that can overrides
+      the CSS of the page.
+    </p>
+    <p>
+      Content Script are more interesting:
+    </p>
+  </details>
+</section>
+
+<section>
+  <h3>Content Scripts</h3>
+
+  <ul class="incremental">
+    <li>Are attached to the HTML Document
+    <li>Can interact with the DOM
+    <li>Are isolated
+    <li>Are protected from page's script
+  </ul>
+
+  <details>
+    They're atteched to the HTML document, but they're isolated.
+    It means, they can interact with the Document's DOM, but they're protected
+    from web page's JavaScript code.
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h4>
+      Simplest possible example
+    </h4>
+    <h2>
+      Open in C9
+    </h2>
+  </hgroup>
+
+  <details>
+    <p>
+      Let's see a simple page-mod.
+    </p>
+    <p>
+      https://github.com/c9/open-in-c9-extension
+    </p>
+  </details>
+</section>
+
+<section>
+  <h3>But wait, there's <em>more</em>!</h3>
+
+  <ul class="incremental">
+    <li>Integrate with the Firefox UI: panels, widgets, preferences, context-menu, tabs
+    <li>Crossdomain requests, notifications, clipboard
+    <li>Access to the entire Mozilla Platform through XPCOM &amp; jsm
+    <li>l10n for HTML content
+  </ul>
+
+  <details>
+    <p>Add-on SDK is not only Page-Mod</p>
+    <p>(...)</p>
+    <p>And Last but not least...</p>
+  </details>
+</section>
+
+<section>
+  
+  <h2 class="topline"><em>Australis</em>: Future Firefox UI</h2>
+  <div class="img-wrapper"><a target="_blank" href="http://people.mozilla.com/~shorlander/files/addons-in-toolbar-i01/addons-in-toolbar.html"><img src="media/firefox-toolbar-addons.png"></a></div>
+</section>
+
+<section>
+    <h2 class="topline"><em>Mobile</em> Support?</h2>
+    <ul class="incremental">
+      <li>Page-mod works already</li>
+      <li>support for device development</li>
+      <li>integration with Mobile Firefox's new native UI coming soon.</li>
+    </ul>
+  <details>
+    <p>If your using Add-on SDK to develop a Firefox Add-on it will runs on both
+    Desktop and Mobile. The support is still experimental, so not all modules
+    are compatible, but Page-Mods for example works perfectly.</p>
     <p></p>
   </details>
 </section>
 
 <section>
-  <h2 style="margin-top:110px">Get hacking!</h2>
+  <h3>Serious examples</h3>
 
+  <ul>
+    <li><a href="https://browserid.org/" target="_blank">BrowserID</a></li>
+    <li><a href="https://addons.mozilla.org/en-US/firefox/addon/cheevos/"target="_blank">Cheevos</a> </li>
+    <li><a href="https://agilebits.com/extensions/mac/index.html" target="_blank">1Password</a></li>
+    <li>over <a href="https://addons.mozilla.org/en-US/firefox/tag/jetpack?appver=10.0" target="_blank">500 more</a> on addons.mozilla.org</li>
+  </ul>
+
+  <details>
+    Here there more complex add-ons written with the SDK.
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h1>Collusion</h1>
+    <h4>They track you</h4>
+  </hgroup>
+
+  <details>
+    <p>If you're paranoid, you were right: they track you.</p>
+    <p>
+      Collusion is an experimental add-on for Firefox and allows you to see all
+      the third parties that are tracking your movements across the Web.
+    </p>
+  </details>
+</section>
+
+<section>
+  <h2 class="topline">We'll keep on <em>party rocking</em>...</h2>
+  <div class="img-wrapper"><img src="media/lmfao.jpg"></div>
+</section>
+
+<section>
+  <h2 class="topline">The <em>Web</em> is the platform...</h2>
+  <ul class="incremental">
+    <li>Firefox Mobile</li>
+    <li>Web Intents</li>
+    <li>Social API</li>
+    <li>Web / device APIs</li>
+  </ul>
+</section>
+
+
+<section>
+  <h2 class="topline">BOOT to Gecko</h2>
+  <div class="img-wrapper"><img src="media/dawg.jpg"></div>
+</section>
+
+
+<section>
+  <hgroup>
+    <h2>Questions?</h2>
+  </hgroup>
+</section>
+
+<section>
+  <h2 style="margin-top:110px">Get hacking!</h2>
   <ul>
     <li>Twitter: <a href="http://twitter.com/canuckistani">@canuckistani</a> &amp;&amp; <a href="http://twitter.com/mozillajetpack">@mozillajetpack</a></li>
     <li>Mozilla <a target="_blank" href="http://blog.mozilla.org/addons/">Add-ons Blog</a></li>
@@ -136,7 +399,6 @@
     <li>IRC: <em>#jetpack</em> on irc.mozilla.org</li>
   </ul> 
 </section>
-
 
 <div id="progress-bar"></div>
 
