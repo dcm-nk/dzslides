@@ -130,6 +130,8 @@
 
   <details>
     <p>It's not just about your browser being open source. How hackable is it? Can you write code, using web technologies puts you back in charge of your browsing experience?</p>
+
+    <p>Is your browser built with web technology? Can you contribute whole new APIs written in JS? </p>
   </details>
 </section>
 
@@ -195,16 +197,16 @@
   <h3>A <em>new way</em> to develop Add-ons</h3>
 
   <ul class="incremental">
-    <li>Command-line tool for testing, running, packaging
-    <li>Test framework
-    <li>Modular development via CommonJS
-    <li>A growing collection of community-contributed modules
+    <li>Command-line tool for testing, running, packaging.</li>
+    <li>Web-based online Add-on Builder for a zero-dependancy add-on hacking.</li>
+    <li>Test framework</li>
+    <li>Modular development via CommonJS</li>
+    <li>A growing collection of community-contributed modules</li>
   </ul>
 
   <details>
     <p>
-      For the ones that doesn't know, the Add-on SDK is the new way to create
-      add-ons for Firefox. It has command line tool for testing, running and packaging;
+      The Add-on SDK is the new way to create add-ons for Firefox. It has command line tool for testing, running and packaging;
       a test framework; a modular development via CommonJS, and growing collection
       of community-contributed modules.
     </p>
@@ -248,9 +250,11 @@
 
 <section>
   <hgroup>
-    <h2>Content Style</h2>
-    <h4>and</h4>
-    <h2>Content Script</h2>
+    <h3>Content Style</h3>
+     <ul class="incremental">
+        <li>CSS injected into thematching page.</li>
+        <li>Easily mangle or fix a website as you see fit.</li>
+      </ul>   
   </hgroup>
 
   <details>
@@ -262,9 +266,21 @@
       Content Style are quite simple: you can apply stylesheets that can overrides
       the CSS of the page.
     </p>
-    <p>
-      Content Script are more interesting:
-    </p>
+  </details>
+</section>
+
+<section>
+  <hgroup>
+    <h4>
+      ContentStyle example:
+    </h4>
+    <h2>
+      <a target="_blank" href="https://builder.addons.mozilla.org/addon/1055548/latest/">HN.css</a>
+    </h2>
+  </hgroup>
+
+  <details>
+    This is a simple example of applying some css to a page via page-mod.
   </details>
 </section>
 
@@ -288,21 +304,6 @@
 <section>
   <hgroup>
     <h4>
-      ContentStyle example:
-    </h4>
-    <h2>
-      <a target="_blank" href="https://builder.addons.mozilla.org/addon/1055548/latest/">HN.css</a>
-    </h2>
-  </hgroup>
-
-  <details>
-    This is a simple example of applying some css to a page via page-mod.
-  </details>
-</section>
-
-<section>
-  <hgroup>
-    <h4>
       ContentScript example:
     </h4>
     <h2>
@@ -311,7 +312,7 @@
   </hgroup>
 
   <details>
-    <p>Here we've got a more complex example: when the page is loaded it signals back to the main add-on code to fetch json data for the current tweet. When the JSON arrives, the main add-on code sends the JSON into the page, which displays it in an unobtrusive way.</p>
+    <p>Here we've got a mostly simple example og a page-mod: when the page is loaded it signals back to the main add-on code to fetch json data for the current tweet. When the JSON arrives, the main add-on code sends the JSON into the page, which displays it in an unobtrusive way.</p>
   </details>
 </section>
 
@@ -363,7 +364,7 @@
   </ul>
 
   <details>
-    Here there more complex add-ons written with the SDK.
+    <p>here are some more serious examples of add-ons written in the SDK.</p>
   </details>
 </section>
 
