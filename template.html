@@ -1,75 +1,127 @@
 <!DOCTYPE html>
-
 <meta charset="utf-8">
-<title>The Title Of Your Presentation</title>
+<title>Hack the Web</title>
 
-<!-- Your Slides -->
-<!-- One section is one slide -->
+<link rel="shortcut icon" type="image/png" href="assets/favicon.png">
 
 <section>
-    <!-- This is the first slide -->
-    <h1>My Presentation</h1>
-    <footer>by John Doe</footer>
+    <h1 style="margin-top:110px">My Presentaton <em>title</em>!</h1>
+    <h4 style="font-size:30px; color:#fff; margin-top: -24px">with the Add-on SDK</h4>
+    <div id="logo"></div>
+
+    <footer>
+      Name Here<br/>
+      <em>Event Name</em>, <time datetime="">January 1<sup>st</sup>, 2012
+    </footer>
+
+    <details>
+      <p>
+        Existential angst: who am I?
+      </p>
+    </details>
 </section>
 
 <section>
-    <p>Some random text: But I've never been to the moon! You can see how I lived before I met you. Also Zoidberg.
-    I could if you hadn't turned on the light and shut off my stereo.</p>
+    <hgroup>
+      <h2>
+        Big letters!
+      </h2>
+      <h4>
+        Smaller letters.
+      </h4>
+    </hgroup>
+
+    <details>
+      <p>
+        Some notes about this slide.
+      </p>
+    </details>
+</section>
+
+
+<section>
+  <hgroup>
+    <h2>Questions?</h2>
+  </hgroup>
+  <details>
+    Reminder, always repeat the question you're asked so evewryone can hear.
+  </details>
 </section>
 
 <section>
-    <h3>An incremental list</h3>
-    <ul class="incremental">
-      <li>Item 1
-      <li>Item 2
-      <li>Item 3
-    </ul>
-    <details>Some notes. They are only visible using onstage shell.</details>
+  <h2>Thank you!</h2>
+  <p>
+    If you have any questions feel free to grab me, or bug me on Twitter!
+    <br/>
+    <a href="http://twitter.com/ZER0">@ZER0</a>
+  </p>
+  <p>
+    We're on IRC: <em>#jetpack</em> on irc.mozilla.org
+  </p>
 </section>
-
-<section>
-  <blockquote>
-    Who's brave enough to fly into something we all keep calling a death sphere?
-  </blockquote>
-</section>
-
-<section>
-    <h2>Part two</h2>
-</section>
-
-<section>
-    <figure> <!-- Figures are used to display images and videos fullpage -->
-      <img src="http://placekitten.com/g/800/600">
-      <figcaption>An image</figcaption>
-    </figure>
-    <details>Kittens are so cute!</details>
-</section>
-
-<section>
-    <figure> <!-- Videos are automatically played -->
-      <video src="http://videos-cdn.mozilla.net/brand/Mozilla_Firefox_Manifesto_v0.2_640.webm" poster="http://www.mozilla.org/images/about/poster.jpg"></video>
-      <figcaption>A video</figcaption>
-    </figure>
-</section>
-
-<section>
-    <h2>End!</h2>
-</section>
-
-<!-- Your Style -->
-<!-- Define the style of your presentation -->
-
-<!-- Maybe a font from http://www.google.com/webfonts ? -->
-<link href='http://fonts.googleapis.com/css?family=Oswald' rel='stylesheet'>
 
 <style>
-  html, .view body { background-color: black; counter-reset: slideidx; }
-  body, .view section { background-color: white; border-radius: 12px }
+  /*
+    Add-on SDK / Jetpack HTML5 slides template
+
+    Author: Matteo Ferretti (@ZER0)
+  */
+
+  @font-face {
+    font-family: 'BebasNeueRegular';
+    src: url('./assets/BebasNeue-webfont.woff') format('woff');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face {
+    font-family: 'MeriendaOneRegular';
+    src: url('./assets/MeriendaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  #logo {
+    width: 345px;
+    height: 329px;
+    background: url(assets/jetpack.png) no-repeat;
+    background-size: 345px 329px;
+    left: 50%;
+    margin-left: -20%;
+    position: absolute;
+    bottom: 41px;
+    clip: rect(0 345px 251px 0);
+    z-index: -100;
+  }
+
+  /*
+    On OS X seems that gradients are not displayed properly on Fullscreen
+    using the Fullscreen API. To avoid that use the Fullscreen provided by
+    the OS instead.
+
+    See: https://bugzilla.mozilla.org/show_bug.cgi?id=756967
+  */
+  html {
+    height: 100%;
+    width: 100%;
+    background: -webkit-radial-gradient(center, ellipse cover,   #353a40 0%, #0c0d0e 100%);
+    background: -moz-radial-gradient(center, ellipse cover,  #353a40 0%, #0c0d0e 100%);
+  }
+
+  html, .view body {
+    counter-reset: slideidx;
+  }
+
+  body, .view section {
+    color: white;
+    text-shadow: 0 3px 4px rgba(0, 0, 0, 0.3);
+    border-radius: 12px
+  }
+
   /* A section is a slide. It's size is 800x600, and this will never change */
   section, .view head > title {
-      /* The font from Google */
-      font-family: 'Oswald', arial, serif;
-      font-size: 30px;
+    font-family: 'BebasNeueRegular', arial, serif;
+    font-size: 30px;
   }
 
   .view section:after {
@@ -85,18 +137,82 @@
     margin: 1em 0 1em 0;
   }
 
+  h1 em {
+    text-shadow: 0 1px 0pt #ab0025,
+      0 2px 0 #82001d,
+      0 3px 1px #540012,
+      0 10px 8px rgba(0, 0, 0, 0.3);
+  }
+
   h1, h2 {
-    margin-top: 200px;
     text-align: center;
     font-size: 80px;
+    font-weight: normal;
+    text-shadow: 0 1px 0pt rgb(204, 204, 204),
+      0 2px 0 rgb(128, 128, 128),
+      0 3px 1px rgb(164, 164, 164),
+      0 10px 8px rgba(0, 0, 0, 0.3);
   }
+
+  a, em, h4, li:before {
+    color: #ff0038;
+    font-style: normal;
+  }
+
+  a {
+    text-decoration: none;
+    border-bottom: 2px dashed #ff0038 ;
+  }
+
+  h1 em, h2 em {
+    font-style: normal;
+  }
+
+  h4 {
+    text-align: center;
+    display: block;
+    font-family: MeriendaOneRegular;
+    font-size: 33px;
+    font-weight: normal;
+    font-style: italic;
+    text-shadow: 0 3px rgba(0, 0, 0, 0.3);
+  }
+
   h3 {
     margin: 100px 0 50px 100px;
+    font-weight: normal;
+  }
+
+  ul.incremental {
+    margin: 50px 100px 50px 170px;
+    list-style: none;
   }
 
   ul {
-      margin: 50px 200px;
+    margin: 50px 100px 50px 170px;
   }
+
+  ul.double {
+    width: 50%;
+    line-height: 1.5em;
+    float: left;
+    display: inline;
+  }
+
+  .incremental li:before {
+    content: "\2714";
+    opacity: 1;
+    margin-left: -35px;
+    margin-right: 10px;
+  }
+
+  li {
+    padding-bottom: 0.5em;
+  }
+  /* The current item */
+
+  /* The items to-be-selected */
+  .incremental > *[aria-selected] ~ li:before { opacity: 0; }
 
   p {
     margin: 75px;
@@ -131,10 +247,11 @@
     position: absolute;
     bottom: 0;
     width: 100%;
-    padding: 40px;
+    padding: 23px;
     text-align: right;
-    background-color: #F3F4F8;
-    border-top: 1px solid #CCC;
+    box-shadow: 0px -15px 15px -15px black;
+    font-size: 28px;
+    z-index: 9;
   }
 
   /* Transition effect */
@@ -148,6 +265,7 @@
     -ms-transition: left 400ms linear 0s;
     transition: left 400ms linear 0s;
   }
+
   .view section {
     -moz-transition: none;
     -webkit-transition: none;
@@ -169,7 +287,7 @@
   /* Incremental elements */
 
   /* By default, visible */
-  .incremental > * { opacity: 1; }
+  .incremental > * { opacity: 0.3; }
 
   /* The current item */
   .incremental > *[aria-selected] { opacity: 1; }
@@ -205,6 +323,7 @@
 <style>
   * { margin: 0; padding: 0; -moz-box-sizing: border-box; -webkit-box-sizing: border-box; box-sizing: border-box; }
   details { display: none; }
+
   body {
     width: 800px; height: 600px;
     margin-left: -400px; margin-top: -300px;
@@ -212,6 +331,7 @@
     overflow: hidden;
     display: none;
   }
+
   .view body {
     position: static;
     margin: 0; padding: 0;
@@ -226,11 +346,17 @@
     -ms-transform: none !important;
   }
   .view head, .view head > title { display: block }
+
   section {
     position: absolute;
     pointer-events: none;
     width: 100%; height: 100%;
   }
+
+  hgroup {
+    margin-top: 200px;
+  }
+
   .view section {
     pointer-events: auto;
     position: static;
@@ -271,6 +397,40 @@
   }
   figure > img, figure > video {
     width: 100%; height: 100%;
+  }
+</style>
+
+<!--
+  Experimental section for printing slides
+-->
+<style media="print">
+  html, body {margin:0;padding:0;}
+  body {
+    position: static;
+    margin: 0; padding: 0;
+    display: block;
+    overflow: visible;
+    height: 100%;
+    width: 100%;
+  }
+  section {
+    left: 0!important;
+    top: 0!important;
+    position: static!important;
+    visibility: visible!important;
+    page-break-after: always!important;
+    display: block;
+  }
+
+  #progress-bar {
+    display: none;
+  }
+
+  .incremental > *,
+  .incremental > *[aria-selected] ~ *,
+  .incremental > *[aria-selected] ~ li:before {
+    opacity: 1!important;
+    visibility: visible;
   }
 </style>
 
@@ -598,7 +758,7 @@
       requestFullscreen.apply(html);
     }
   }
-  
+
   Dz.setProgress = function(aIdx, aStep) {
     var slide = $("section:nth-of-type("+ aIdx +")");
     if (!slide)
@@ -608,14 +768,14 @@
         stepSize = slideSize / steps;
     this.progressBar.style.width = ((aIdx - 1) * slideSize + aStep * stepSize) + '%';
   }
-  
+
   Dz.postMsg = function(aWin, aMsg) { // [arg0, [arg1...]]
     aMsg = [aMsg];
     for (var i = 2; i < arguments.length; i++)
       aMsg.push(encodeURIComponent(arguments[i]));
     aWin.postMessage(aMsg.join(" "), "*");
   }
-  
+
   function init() {
     Dz.init();
     window.onkeydown = Dz.onkeydown.bind(Dz);
@@ -625,6 +785,7 @@
   }
 
   window.onload = init;
+
 </script>
 
 
@@ -633,7 +794,7 @@
     Function.prototype.bind = function (oThis) {
 
       // closest thing possible to the ECMAScript 5 internal IsCallable
-      // function 
+      // function
       if (typeof this !== "function")
       throw new TypeError(
         "Function.prototype.bind - what is trying to be fBound is not callable"
@@ -665,6 +826,5 @@
   $$.forEach = function(nodeList, fun) {
     Array.prototype.forEach.call(nodeList, fun);
   }
-
 </script>
 <!-- vim: set fdm=marker: }}} -->
