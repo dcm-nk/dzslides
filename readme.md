@@ -1,3 +1,9 @@
+#TL;DR
+
+	git clone https://github.com/canuckistani/dzslides.git jetpack-slides && cd jetpack-slides
+	git checkout -b <some-branch-name>
+	cp template.html index.html && vim index.html
+
 ## Basic usage
 
 **DZSlides** is a **one-file** HTML template to build slides in HTML5 and CSS3.
