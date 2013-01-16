@@ -1,17 +1,18 @@
 <!DOCTYPE html>
 <meta charset="utf-8">
-<title>Hack the Web</title>
+<title>New Kind</title>
 
-<link rel="shortcut icon" type="image/png" href="assets/favicon.png">
+<link rel="shortcut icon" type="image/png" href="assets/favicon.ico">
 
 <section>
-    <h1 style="margin-top:110px">My Presentaton <em>title</em>!</h1>
-    <h4 style="font-size:30px; color:#fff; margin-top: -24px">with the Add-on SDK</h4>
+    <h1 style="margin-top:110px">A Presentaton <em>New Kind</em>!</h1>
+    <h4 style="font-size:20px; color:#fff; margin-top: -8px">This is
+    a tag line</h4>
     <div id="logo"></div>
 
     <footer>
-      Name Here<br/>
-      <em>Event Name</em>, <time datetime="">January 1<sup>st</sup>, 2012
+      David Mason<br/>
+      <em>An Event</em>, <time datetime="">January 1<sup>st</sup>, 2013
     </footer>
 
     <details>
@@ -38,38 +39,44 @@
     </details>
 </section>
 
+<section>
+    <figure> <!-- Figures are used to display images and videos fullpage -->
+      <img src="http://placekitten.com/g/800/600">
+      <figcaption>An image</figcaption>
+    </figure>
+    <div role="note">Kittens are cute</div>
+</section>
 
 <section>
   <hgroup>
     <h2>Questions?</h2>
   </hgroup>
   <details>
-    Reminder, always repeat the question you're asked so evewryone can hear.
+    Reminder, always repeat the question you're asked so everyone can hear.
   </details>
 </section>
 
 <section>
   <h2>Thank you!</h2>
   <p>
-    If you have any questions feel free to grab me, or bug me on Twitter!
+    If you have any questions, find me on Twitter!
     <br/>
-    <a href="http://twitter.com/ZER0">@ZER0</a>
+    <a href="http://twitter.com/dcm">@dcm</a>
   </p>
-  <p>
-    We're on IRC: <em>#jetpack</em> on irc.mozilla.org
+    <a href="http://newkind.com">newkind.com</a>
   </p>
 </section>
 
 <style>
   /*
-    Add-on SDK / Jetpack HTML5 slides template
+    New Kind HTML5 slides template
 
-    Author: Matteo Ferretti (@ZER0)
+    Author: David Mason (@dcm)
   */
 
   @font-face {
-    font-family: 'BebasNeueRegular';
-    src: url('./assets/BebasNeue-webfont.woff') format('woff');
+    font-family: 'NationalRegular';
+    src: url ('./assets/NationalWeb-Regular.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
@@ -77,6 +84,13 @@
   @font-face {
     font-family: 'MeriendaOneRegular';
     src: url('./assets/MeriendaOne-Regular.ttf') format('truetype');
+    font-weight: normal;
+    font-style: normal;
+  }
+
+  @font-face{
+    font-family: 'BebasNeueRegular'; 
+    src: url('./assets/BebasNeue-webfont.woff') format('woff');
     font-weight: normal;
     font-style: normal;
   }
@@ -104,8 +118,12 @@
   html {
     height: 100%;
     width: 100%;
+/* White Background
+    background: -webkit-radial-gradient(center, ellipse cover, #ffffff 0% #cccccc 100%);
+    background: -moz-radial-gradient(center, ellipse cover, #ffffff 0% #cccccc 100%);  
+*/
     background: -webkit-radial-gradient(center, ellipse cover,   #353a40 0%, #0c0d0e 100%);
-    background: -moz-radial-gradient(center, ellipse cover,  #353a40 0%, #0c0d0e 100%);
+    background: -moz-radial-gradient(center, ellipse cover,  #353a40 0%, #0c0d0e 100%); 
   }
 
   html, .view body {
@@ -120,7 +138,7 @@
 
   /* A section is a slide. It's size is 800x600, and this will never change */
   section, .view head > title {
-    font-family: 'BebasNeueRegular', arial, serif;
+    font-family: 'NationalRegular', arial, serif;
     font-size: 30px;
   }
 
@@ -146,7 +164,7 @@
 
   h1, h2 {
     text-align: center;
-    font-size: 80px;
+    font-size: 60px;
     font-weight: normal;
     text-shadow: 0 1px 0pt rgb(204, 204, 204),
       0 2px 0 rgb(128, 128, 128),
@@ -155,7 +173,7 @@
   }
 
   a, em, h4, li:before {
-    color: #ff0038;
+    color: #00d9ff;
     font-style: normal;
   }
 
